@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+   <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+       <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+  </head>
+
+  <body>
+     <br/><br/>
+       <div class="container">
+     <div class="jumbotron">
+         <h1>My Album</h1>
+            <p>Crea y guarda todas las fotos que desees!</p>
+     </div>
+			
+		<div id="mostrarAlbum">
+		{% for i in images %}
+			<img src='/fotosAlbum?id={{i.get_key()}}' class="img-circle" alt="Register" width="204" height="156"/>		
+		{% endfor %}
+		</div>	
+		<div id="mensaje"></div>
+	</div>
+    </section>
+</div>
+</body>
+</html>

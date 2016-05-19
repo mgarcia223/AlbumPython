@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+	</head>
+
+	<body>
+		<br/><br/>
+   	 <div class="container">
+  		<div class="jumbotron">
+    		<h1>My Album</h1>
+    			<p>Crea y guarda todas las fotos que desees!</p>
+		</div>
+
+
+
+		 <form method="post">
+			  <table>
+				 <tr>
+					 <td> Nombre </td>
+					 <td><input type="text" name="nombre"  value= "%(nombre)s" placeholder="nombre"></td>
+					 <td class="error"> %(error_nombre)s</td>
+				 </tr>
+				  <tr>
+					 <td> Apellido </td>
+					 <td><input type="text" name="apellido"  value= "%(apellido)s" placeholder="apellido"></td>
+				 </tr>
+				  <tr>
+					 <td> Email </td>
+					 <td><input type="text" name="email" value= "%(email)s" placeholder="email"></td>
+					  <td class="error"> %(error_email)s</td>
+				 </tr>
+				 <tr>
+					 <td> Password </td>
+					 <td><input type="password" name="password"  value= "%(password)s" placeholder="password"></td>
+					 <td class="error"> %(error_password)s</td>
+				 </tr>
+				  <tr>
+					 <td> Repite Password </td>
+					 <td><input type="password" id="password2"  value= "%(password2)s" placeholder="repite password"></td>
+				 </tr>
+				 <tr>
+					 <td align="center"><input type="submit" class="button" value="register"></td>
+				 </tr>
+			 </table>
+		 </form>
+	</div>
+	</body>
+</html>

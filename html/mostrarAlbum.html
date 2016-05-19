@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+   <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+       <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+  </head>
+
+  <body>
+     <br/><br/>
+       <div class="container">
+     <div class="jumbotron">
+         <h1>My Album</h1>
+            <p>Crea y guarda todas las fotos que desees!</p>
+     </div>
+
+		<div id="listaAlbumes">
+		<select name="album" id="select" onchange="cambiarAlbumesAJAX()">
+			{% for a in albums %}
+				<option value="{{a.name}}">{{a.name}}</option>
+			{% endfor %}
+		</select>
+		</div><br/>
+		<div id="mostrarAlbum"></div>	
+		<div id="mensaje"></div>
+	</div>
+    </section>
+</div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+	
+<script>
+	
+	//Al cargar la pagina
+	$(window).load(function() {
+    });
+	
+	
+	
+	
+		//CAMBIA El ALBUM
+	function cambiarAlbumesAJAX(){
+	cod = $("#select").val();
+		$.ajax('/mostrarFotos', 		
+			{"type": "POST",
+			"data": "album="+cod,
+			"success":function(datos){
+				$('#mostrarAlbum').html(datos);},
+			"error":function(){
+			$('#mostrarAlbum').html('<p class="error"><strong>El servidor parece que no responde</p>');
+			}
+		});
+	}
+</script>

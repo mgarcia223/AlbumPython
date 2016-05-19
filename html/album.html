@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+	</head>
+
+	<body>
+		<br/><br/>
+		 <div class="container">
+			 <p align="rigth">Bienvenid@: %(nombre)s</p>
+			 <a href="/logout">Logout</a>
+
+			<div class="jumbotron">
+				<h1>My Album</h1>
+					<p>Crea y guarda todas las fotos que desees!</p>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4">
+				  <h3>Crear Album</h3>
+				  <a href="/crearAlbum"> <img src="/images/crearalbum.jpg" class="img-circle" alt="Login" width="204" height="156"/></a>
+				</div>
+				<div class="col-sm-4">
+				  <h3>Subir Fotos</h3>
+				  <a href="/subirFotos"><img src="/images/subir.jpg" class="img-circle" alt="Register" width="204" height="156"/> </a>
+				</div>
+				<div class="col-sm-4">
+				  <h3>Mostrar Album</h3>
+				  <a href="/mostrarFotos"><img src="/images/visualizar.jpg" class="img-circle" alt="Album" width="204" height="156"> </a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

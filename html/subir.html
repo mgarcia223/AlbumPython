@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
+	</head>
+
+	<body>
+		<br/><br/>
+		<div class="container">
+		<div class="jumbotron">
+			<h1>My Album</h1>
+			<p>Crea y guarda todas las fotos que desees!</p>
+		</div>
+
+			<form action="{{url}}" method="post" enctype="multipart/form-data">
+				<table>
+					<tr>
+						<td> Album </td>
+						<td>
+							<select name="album">
+								{% for a in albums %}
+									<option value="{{a.name}}">{{a.name}}</option>
+								{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Foto </td>
+						<td><input type="file" name="imagen" accept="image/*"></td>
+					</tr>
+					<tr>
+						<td>Privacidad </td>
+						<td>
+							<input type="radio" name="access" value="public" checked="checked" />Publico
+							<input type="radio" name="access" value="private" /> Privado
+							<input type="radio" name="access" value="limited" /> Limitado
+						</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="submit" class="button" value="subirfoto"></td>
+					</tr>
+				</table>
+			</form>
+
+		</div>
+	</body>
+</html>
